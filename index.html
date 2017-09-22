@@ -20,12 +20,12 @@
       </div>
 
       <div id="search-bar">
-        <input type="search" onkeydown="search(keyPressed)">
+        <input id="search" type="search" onkeypress="search(event)">
       </div>
 
       <div id="bars">
 
-        <div onclick="search(keyPressed)" class="button" id="search-button">
+        <div onclick="searchButton()" class="button" id="search-button">
           <p>Google Search</p>
         </div>
 

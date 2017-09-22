@@ -1,12 +1,29 @@
 console.log("sane");
+var googleSearch = "https://www.google.com/search?q=";
+var inputArray = [];
 function lucky() {
-  window.location = "https://www.google.com/search?q=Oh!+You+Pretty+Things"
+  window.location = "https://www.google.com/search?q=Oh!+You+Pretty+Things";
 }
 
-/*function search(keyPressed) {
-  var enterKey = keyPressed.event || keyPressed.keyCode;
-  if(enterKey == 13){
-    var x = document.getElementByTagName("input").value;
-    console.log(x);
+function search(event) {
+  var enterKey = event.event || event.keyCode;
+  if(enterKey == 13 ){
+    var input = document.getElementById("search").value;
+    inputArray= input.split(" ");
+    for(var i=0; i < inputArray.length;i++){
+      googleSearch+= inputArray[i];
+      googleSearch += "+";
+    }
+    window.location = googleSearch;
   }
-} work on this later */
+}
+
+var searchButton = function(){
+  var input = document.getElementById("search").value;
+  inputArray= input.split(" ");
+  for(var i=0; i < inputArray.length;i++){
+    googleSearch+= inputArray[i];
+    googleSearch += "+";
+  }
+  window.location = googleSearch;
+}
